@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Off-Clock Dude | Salary Calculator</title><link href="" rel="stylesheet"><style>:root { --primary: #6366f1; --bg: #f1f5f9; --text: #0f172a; }body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }.card { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 20px 25px rgba(0,0,0,0.1); width: 350px; text-align: center; }h1 { color: var(--primary); font-weight: 800; margin-bottom: 30px; }input { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #e2e8f0; border-radius: 12px; box-sizing: border-box; }button { width: 100%; background: var(--primary); color: white; border: none; padding: 15px; border-radius: 12px; font-weight: 700; cursor: pointer; }#res { margin-top: 25px; display: none; }#out { font-size: 32px; font-weight: 800; }</style></head><body><div class="card"><h1>Off-Clock Dude</h1><input type="number" id="s" placeholder="Annual Salary ($)&quot;&gt;
+&lt;button onclick=&quot;c()&quot;&gt;Calculate&lt;/button&gt;
+&lt;div id=&quot;res&quot;&gt;
+&lt;div style=&quot;color:#64748b&quot;&gt;Hourly Rate:&lt;/div&gt;
+&lt;div id=&quot;out&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+function c() {
+const val = document.getElementById(&#39;s&#39;).value;
+if(val) {
+document.getElementById(&#39;out&#39;).innerText = &#39;$' + (val/2080).toFixed(2);document.getElementById('res').style.display = 'block';}}</script></body></html>
