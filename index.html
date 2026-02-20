@@ -5,35 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naija Tax Calculator | Off-Clock Dude</title>
-<style>
-:root { --primary: #6366f1; --primary-dark: #4f46e5; --bg: #f8fafc; }
-body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: #1e293b; line-height: 1.6; display: flex; justify-content: center; padding: 20px; }
-.container { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 100%; max-width: 500px; }
-h1 { color: var(--primary); text-align: center; margin-bottom: 1.5rem; }
-.input-group { margin-bottom: 1.2rem; }
-label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
-input, select { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; font-size: 1rem; }
-button { width: 100%; padding: 14px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-button:hover { background: var(--primary-dark); }
-.results-card { margin-top: 2rem; padding: 1.5rem; background: #f1f5f9; border-radius: 12px; border-left: 5px solid var(--primary); display: none; }
-.res-row { display: flex; justify-content: space-between; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem; }
-.res-label { font-size: 0.9rem; color: #64748b; }
-.res-val { font-weight: 700; color: #0f172a; }
-.footer { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #94a3b8; }
-</style>
+<script src=""></script>
 </head>
-<body>
-<div class="container">
-<h1>Naija Tax Calculator</h1>
-<div class="input-group">
-<label>Monthly Gross Salary (₦)</label>
-<input type="number" id="monthlySalary" placeholder="e.g. 250000">
-</div>
-<div class="input-group">
-<label>Pension Contribution (%)</label>
-<input type="number" id="pensionRate" value="8">
-</div>
-<button onclick="calculateDetailedTax()">Calculate Full Breakdown</button>
+<body class="bg-slate-50 text-slate-900 font-sans">
 
 </body>
 </html>
