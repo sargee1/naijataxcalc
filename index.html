@@ -1,12 +1,44 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Off-Clock Dude | Salary Calculator</title><link href="" rel="stylesheet"><style>:root { --primary: #6366f1; --bg: #f1f5f9; --text: #0f172a; }body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }.card { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 20px 25px rgba(0,0,0,0.1); width: 350px; text-align: center; }h1 { color: var(--primary); font-weight: 800; margin-bottom: 30px; }input { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #e2e8f0; border-radius: 12px; box-sizing: border-box; }button { width: 100%; background: var(--primary); color: white; border: none; padding: 15px; border-radius: 12px; font-weight: 700; cursor: pointer; }#res { margin-top: 25px; display: none; }#out { font-size: 32px; font-weight: 800; }</style></head><body><div class="card"><h1>Off-Clock Dude</h1><input type="number" id="s" placeholder="Annual Salary ($)&quot;&gt;
-&lt;button onclick=&quot;c()&quot;&gt;Calculate&lt;/button&gt;
-&lt;div id=&quot;res&quot;&gt;
-&lt;div style=&quot;color:#64748b&quot;&gt;Hourly Rate:&lt;/div&gt;
-&lt;div id=&quot;out&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;script&gt;
-function c() {
-const val = document.getElementById(&#39;s&#39;).value;
-if(val) {
-document.getElementById(&#39;out&#39;).innerText = &#39;$' + (val/2080).toFixed(2);document.getElementById('res').style.display = 'block';}}</script></body></html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naija Tax Calc | Off-Clock Dude</title>
+<style>
+:root { --primary: #6366f1; --bg: #f8fafc; --text: #1e293b; }
+body { font-family: sans-serif; background: var(--bg); color: var(--text); display: flex; justify-content: center; padding: 20px; }
+.container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; margin-top: 50px; }
+h1 { color: var(--primary); font-size: 1.5rem; }
+input { width: 100%; padding: 12px; margin: 15px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+button { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+#res { margin-top: 20px; padding: 15px; background: #eef2ff; border-radius: 8px; font-weight: bold; display: none; }
+.footer { margin-top: 25px; font-size: 0.8rem; color: #64748b; border-top: 1px solid #eee; padding-top: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Naija Tax Calculator</h1>
+<input type="number" id="salary" placeholder="Enter Monthly Salary (₦)">
+<button onclick="calc()">Calculate Net Pay</button>
+<div id="res"></div>
+<div class="footer">Created by Off-Clock Dude</div>
+</div>
+<script>
+function calc() {
+let s = document.getElementById('salary').value;
+if(!s || s <= 0) return alert("Please enter a salary");
+let annual = s * 12;
+let cra = Math.max(200000, 0.01 * annual) + (0.2 * annual);
+let taxable = Math.max(0, annual - cra);
+let tax = 0;
+if (taxable <= 300000) tax = taxable * 0.07;
+else if (taxable <= 600000) tax = 21000 + (taxable - 300000) * 0.11;
+else tax = 54000 + (taxable - 600000) * 0.15;
+let net = (annual - tax) / 12;
+document.getElementById('res').style.display = 'block';
+document.getElementById('res').innerHTML = 'Monthly Take-Home: ₦' + Math.round(net).toLocaleString();
+}
+</script>
+</body>
+</html>
